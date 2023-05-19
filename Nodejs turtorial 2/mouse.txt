@@ -1,0 +1,25 @@
+db.items.insertMany([{name: "Oppo A16e", qty: 34, price: 33999, sold: 34}, {name: "Realme", qty: 14, price: 13999, sold: 54}, {name: "Moto G4", qty: 56, price: 43999, sold: 34}, {name: "Vivo 45d", qty: 44, price: 43999, sold: 4}, {name: "Itel it", qty: 54, price: 23999, sold: 4, isBit: true}])
+
+db.items.find()
+
+db.items.insertOne({name: "Samsung a14e, price: 12999, qty: 34, sold: 34"})
+
+show dbs
+
+use araizkart
+
+db.items.find({price: 13999})
+
+db.items.find({price: {$gte: 13999}})
+
+db.items.find({price: {$gte: 13999}, sold: {$gte: 34}})
+
+db.items.find({price: {$lte: 13999}, sold: {$lte: 34}})
+
+db.items.find({ $or: [{price: {$gte: 13999}}, {sold: {$gte: 34}}]})
+
+db.items.find({price: {$gte: 13999}}, "rating" : 1)
+
+db.items.deleteOne({price: 13999})
+
+db.items.deleteMany({price: 13999})

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this </title>
+</head>
+<body>
+    <script>
+        console.log("hello");
+        let p1 = new Promise((ressolve, reject)=>{
+            console.log("I am not ressolve");
+            setTimeout(() => {
+                console.log("I am In the set time out and I am ressolved")
+                ressolve(23);
+            }, 2000);
+        })
+
+
+        p1.then((value)=>{
+            setTimeout(() => {
+                console.log(`Your Promise has been ressolved with value ${value}`);
+                
+            }, 3000);
+            
+        })
+        p1.then((value)=>{
+            console.log(`Your Value is ${value}`);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this </title>
+</head>
+<body>
+    <script>
+        console.log("hello");
+        let pro = new Promise((ressolve , reject) =>{
+            setTimeout(() => {
+                console.log("Ressolve After Two Seaconds");
+                ressolve(45);
+            }, 2000);
+        })
+        pro.then((value)=>{
+            console.log(value);
+            let pro2 = new Promise((ressolve, reject)=>{
+                setTimeout(() => {
+                    ressolve("Ressolved After Another Two Seaconds")
+                    
+                }, 2000);
+                
+            })
+            return pro2;
+        }).then((value)=>{
+            console.log(value);
+            console.log("We are Done!")
+            return 2;
+        }).then((value)=>{
+            console.log("Now We Are Pakka Done" + value);
+        })
+
+    </script>
+</body>
+</html>

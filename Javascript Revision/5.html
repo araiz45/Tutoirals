@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <script>
+        console.log("hello");
+        let con = prompt("Enter Value");
+        con = Number.parseInt(con);
+        // console.log(con)
+        let pro = new Promise ((ressolve, reject) =>{
+            console.log("I am a Promise and I am pending");
+
+            setTimeout(() => {
+                if(con > 0){
+                    
+                    console.log("I am a Promise and I am fulfilled..")
+                    ressolve(true)
+                    return;
+                }
+                else{
+                    reject(new Error("I am a promise and I am dummy"))
+                    console.log("I am Promise I am rejected")
+                }
+            }, 5000);
+        })
+        // let pro2 = new Promise ((ressolve, reject) =>{
+        //     console.log("I am a Promise and I am pending");
+
+        //     setTimeout(() => {
+        //         console.log("I am a Promise and I am Rejected..")
+        //         // ressolve(true)
+        //         reject(new Error("I am a promise and I am dummy"))
+        //     }, 5000);
+        // })
+
+        console.log(pro)
+        pro.then((value) =>{
+            alert("fulfilled");
+        }, (error) => {
+            alert("error");
+        })
+        // pro2.catch((value) =>{
+        //     console.log(value);
+        //     console.log("some error occur in p2 ");
+        // })
+    </script>
+</body>
+</html>
